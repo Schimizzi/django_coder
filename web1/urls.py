@@ -7,4 +7,5 @@ app_name = "web1"
 urlpatterns = [
     path('estudiantes/', lista_estudiantes, name='lista_estudiantes'),
     path('estudiantes/<int:pk>/', detalle_estudiante, name='detalle_estudiante'),
+    
 ]

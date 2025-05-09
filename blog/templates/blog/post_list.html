@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Blog Tecnológico</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+            border-bottom: #0779e4 3px solid;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        .post {
+            background: #fff;
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .post h2 {
+            margin-top: 0;
+            color: #0779e4;
+        }
+        .post a {
+            text-decoration: none;
+            color: #0779e4;
+        }
+        .post a:hover {
+            text-decoration: underline;
+        }
+        .post-meta {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        .post-contenido {
+            margin-bottom: 10px;
+        }
+        .no-posts {
+            text-align: center;
+            padding: 20px;
+            color: #777;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: #fff;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mi Blog Tecnológico</h1>
+    </header>
+
+    <div class="container">
+        {% if posts %}
+            {% for post in posts %}
+                <article class="post">
+                    <h2><a href="#">{{ post.titulo }}</a></h2>
+                    {# Reemplaza "#" con la URL al detalle del post si la tienes #}
+                    {# Ejemplo: <a href="{% url 'blog:detalle_post' post.id %}">{{ post.titulo }}</a> #}
+                    
+                    <p class="post-meta">
+                        Publicado el: {{ post.fecha_publicacion|date:"d M Y, H:i" }}
+                    </p>
+                    
+                    <div class="post-contenido">
+                        {{ post.contenido|truncatewords:50|linebreaks }}
+                        {# truncatewords:50 limita el contenido a 50 palabras #}
+                        {# linebreaks convierte saltos de línea en <p> o <br> #}
+                    </div>
+                    
+                    <a href="#">Leer más...</a>
+                    {# Ejemplo: <a href="{% url 'blog:detalle_post' post.id %}">Leer más...</a> #}
+                </article>
+            {% endfor %}
+        {% else %}
+            <p class="no-posts">Aún no hay posts en el blog. ¡Vuelve pronto!</p>
+        {% endif %}
+    </div>
+
+    <footer>
+        <p>&copy; {% now "Y" %} Mi Blog. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
