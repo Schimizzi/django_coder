@@ -173,4 +173,5 @@ cython_debug/
 # PyPI configuration file
 .pypirc
 
-appcoder/
+# sqlite3 admin / admin123
+appcoder/ 
