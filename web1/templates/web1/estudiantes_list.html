@@ -1,15 +1,22 @@
+<!-- web1/templates/web1/estudiantes_list.html (1-15) -->
 
 <!DOCTYPE html>
 <html>
 <head>
     <title>Lista de Estudiantes</title>
+    <!-- Agregar hoja de estilos de Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 </head>
 <body>
-    <h1>Lista de Estudiantes</h1>
-    <ul>
-        {% for estudiante in estudiantes %}
-            <li>{{ estudiante.nombre }} {{ estudiante.apellido }}</li>
-        {% endfor %}
-    </ul>
+    <h1 class="text-center">Lista de Estudiantes</h1>
+    <div class="container-fluid">
+        <ul class="list-group list-group-flush">
+            {% for estudiante in estudiantes %}
+                <li class="list-group-item">
+                    {{ estudiante.nombre }} {{ estudiante.apellido }}
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
 </body>
 </html>

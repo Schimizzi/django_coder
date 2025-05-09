@@ -1,11 +1,35 @@
-
 <!DOCTYPE html>
 <html>
 <head>
     <title>Detalle del Estudiante</title>
+    <!-- Agregamos los estilos de Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f2f2f2;
+        }
+    </style>
 </head>
 <body>
-    <h1>{{ estudiante.nombre }} {{ estudiante.apellido }}</h1>
-    <p>Email: {{ estudiante.email }}</p>
+    <!-- Agregamos una clase de Bootstrap para darle estilos a la sección principal -->
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card border-info mb-3" style="max-width: 540px;">
+                    <div class="card-header">{{ estudiante.nombre }} {{ estudiante.apellido }}</div>
+                    <div class="card-body text-info">
+                        <h5 class="card-title">Detalle del Estudiante</h5>
+                        <p class="card-text">Email: {{ estudiante.email | safe }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Agregamos un footer para cerrar la página de manera elegante -->
+    <footer class="text-center text-lg-start" style="background-color: #000; color: #fff">
+        <p>&copy; 2025 desarrollado por Gemini con la colaboracion de Claudio</p>
+    </footer>
+
 </body>
 </html>
