@@ -8,3 +8,5 @@ def post_list(request):
     return render(request, 'blog/post_list.html', context={"posts": post_list})
 
 
+def index_view(request):
+    return render(request, 'web1/index.html')

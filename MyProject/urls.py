@@ -18,8 +18,11 @@ from django.contrib import admin
 from django.urls import path, include
 from blog import views
 
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path ('web1/', include('web1.urls') ),
     path('blog/', views.post_list, name="post_list")
+    
 ]

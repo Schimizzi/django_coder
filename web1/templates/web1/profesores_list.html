@@ -1,0 +1,25 @@
+<!-- web1/templates/web1/profesors_list.html (1-15) -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Profesores</title>
+    <!-- Agregar hoja de estilos de Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+    <h1 class="text-center">Lista de Profesores</h1>
+    <div class="container-fluid">
+        <ul class="list-group list-group-flush">
+            {% for profesor in profesores %}
+                <li class="list-group-item">
+<!--                <a href="{% url 'web1:lista_profesores' %}" class="btn btn-link">{{ profesor.nombre }} {{ profesor.apellido }}</a> -->
+                    <a href="{% url 'web1:lista_profesores' %}{{ profesor.pk }}" class="btn btn-link">{{ profesor.nombre }} {{ profesor.apellido }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
+
+
