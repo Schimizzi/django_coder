@@ -2,6 +2,9 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Estudiante, Profesor, Curso, Entregable
 
+def index(request):
+    return render(request, 'web1/index.html')
+
 def lista_estudiantes(request):
     estudiantes = Estudiante.objects.all()
     return render(request, 'web1/estudiantes_list.html', {'estudiantes': estudiantes})
@@ -17,5 +20,4 @@ def lista_profesores(request):
 def detalle_profesor(request, pk):
     profesor = get_object_or_404(Profesor, pk=pk)
     return render(request, 'web1/profesor_detail.html', {'profesor': profesor})
-
 
