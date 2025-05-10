@@ -13,7 +13,7 @@
         <ul class="list-group list-group-flush">
             {% for estudiante in estudiantes %}
                 <li class="list-group-item">
-                    {{ estudiante.nombre }} {{ estudiante.apellido }}
+                    <a href="{% url 'web1:lista_estudiantes' %}{{ estudiante.pk }}" class="btn btn-link">{{ estudiante.nombre }} {{ estudiante.apellido }}</a>
                 </li>
             {% endfor %}
         </ul>
