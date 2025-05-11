@@ -52,7 +52,7 @@
 
         <ul class="list-group list-group-flush">
             {% for estudiante in estudiantes %}
-                <a href="{% url 'web1:lista_estudiantes' %}{{ estudiante.pk }}" 
+                <a href="{% url 'web1:lista_estudiantes' %}{{ estudiante.slug }}" 
                    class="list-group-item list-group-item-action d-flex align-items-center py-3 btn-animated">
                     <i class="fas fa-user-alt me-3 text-primary"></i> {# Icono de estudiante #}
                     <span class="fw-bold text-dark">{{ estudiante.nombre }} {{ estudiante.apellido }}</span>

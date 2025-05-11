@@ -52,7 +52,7 @@
 
         <ul class="list-group list-group-flush">
             {% for profesor in profesores %}
-                <a href="{% url 'web1:lista_profesores' %}{{ profesor.pk }}" 
+                <a href="{% url 'web1:lista_profesores' %}{{ profesor.slug }}" 
                    class="list-group-item list-group-item-action d-flex align-items-center py-3 btn-animated">
                     <i class="fas fa-user-alt me-3 text-primary"></i> {# Icono de profesor #}
                     <span class="fw-bold text-dark">{{ profesor.nombre }} {{ profesor.apellido }}</span>
