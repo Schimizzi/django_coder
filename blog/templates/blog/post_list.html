@@ -18,9 +18,7 @@
                     <article class="card mb-4 border rounded">
                         <div class="card-body">
                             <h2 class="card-title fs-4 mt-0">
-                                <a href="#" class="text-decoration-none text-primary">{{ post.titulo }}</a>
-                                {# Reemplaza "#" con la URL al detalle del post si la tienes #}
-                                {# Ejemplo: <a href="{% url 'blog:detalle_post' post.id %}" class="text-decoration-none text-primary">{{ post.titulo }}</a> #}
+                                <h3>{{ post.titulo }}</h3>
                             </h2>
                             
                             <p class="card-subtitle small text-muted mb-2">
@@ -29,12 +27,9 @@
                             
                             <div class="card-text mb-3">
                                 {{ post.contenido|truncatewords:50|linebreaks }}
-                                {# truncatewords:50 limita el contenido a 50 palabras #}
-                                {# linebreaks convierte saltos de línea en <p> o <br> #}
                             </div>
                             
                             <a href="https://www.coderhouse.com/" class="btn btn-link text-primary p-0">Leer más...</a>
-                            {# Ejemplo: <a href="{% url 'blog:detalle_post' post.id %}" class="btn btn-link text-primary p-0">Leer más...</a> #}
                         </div>
                     </article>
                 {% endfor %}

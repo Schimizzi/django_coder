@@ -2,9 +2,9 @@
 from django.db import models
 
 class Estudiante(models.Model):
-    nombre = models.CharField(max_length=100)
+    nombre = models.CharField(blank=False, max_length=100)
     apellido = models.CharField(max_length=100)
-    email = models.EmailField()
+    email = models.EmailField(unique=True)
 
     def __str__(self):
         return f"{self.nombre} {self.apellido}"
@@ -12,7 +12,7 @@ class Estudiante(models.Model):
 class Profesor(models.Model):
     nombre = models.CharField(max_length=100)
     apellido = models.CharField(max_length=100)
-    email = models.EmailField()
+    email = models.EmailField(unique=True)
     profesion = models.CharField(max_length=100)
 
     def __str__(self):
@@ -20,7 +20,7 @@ class Profesor(models.Model):
 
 class Curso(models.Model):
     nombre = models.CharField(max_length=100)
-    camada = models.IntegerField()
+    camada = models.IntegerField(unique=True)
 
     def __str__(self):
         return self.nombre
