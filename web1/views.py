@@ -11,16 +11,8 @@ def lista_estudiantes(request):
 
 def detalle_estudiante(request, slug): 
     estudiante = get_object_or_404(Estudiante, slug=slug)
-    if not (request.user.is_staff or request.user.is_superuser) and estudiante.user != request.user:
-        raise Http404 # O HttpResponseForbidden("No tienes permiso para ver este perfil.")
-
     return render(request, 'web1/estudiante_detail.html', {'estudiante': estudiante})
 
-
-""" def detalle_estudiante(request, pk):
-    estudiante = get_object_or_404(Estudiante, pk=pk)
-    return render(request, 'web1/estudiante_detail.html', {'estudiante': estudiante})
- """
 def lista_profesores(request):
     profesores = Profesor.objects.all()
     return render(request, 'web1/profesores_list.html', {'profesores': profesores})
